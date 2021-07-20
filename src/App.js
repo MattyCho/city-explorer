@@ -8,7 +8,9 @@ class App extends React.Component {
     super(props);
     this.state= {
       searchQuery: '',
-      location: {}
+      location: {},
+      showMap: false,
+      mapSrc: null
     };
   }
 
@@ -17,9 +19,13 @@ class App extends React.Component {
     const API = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_API_KEY}&q=${this.state.searchQuery}&format=json`;
     const response = await axios.get(API);
 
-    this.setState({ location: response.data[0] });
+    this.setState({
+      location: response.data[0],
+      showMap: true,
+      mapSrc: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_API_KEY}&center=${response.data[0].lat},${response.data[0].lon}&zoom=16&size=1000x1000`,
+    });
+    console.log(response.data);
     console.log('LOCATION IQ DATA:', this.state.location);
-
   }
 
   render() {
@@ -36,6 +42,7 @@ class App extends React.Component {
         <p>Location: {this.state.location.display_name}</p>
         <p>Latitude: {this.state.location.lat}</p>
         <p>Longitude: {this.state.location.lon}</p>
+        {this.state.showMap && <img alt="map" src={this.state.mapSrc} />}
       </>
     );
   }
