@@ -8,7 +8,7 @@
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 ![whiteboard](./src/lab06-whiteboard.png)
 
-**Given** that a user enters a valid location in the input
+**Given** that a user enters a valid location in the input.
 
 **When** the user clicks the "Explore!" button
 
