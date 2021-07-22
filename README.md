@@ -69,5 +69,7 @@ Example Response:
 
 07-19-2021 1:49pm - Initial React App Setup.
 
+07-21-2021 6:48pm - Completed Weather and MovieDB features and linked to Heroku server. Deployed to Netlify.
+
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
