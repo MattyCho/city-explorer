@@ -22,11 +22,11 @@ class App extends React.Component {
     try {
       const API = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.searchQuery}&format=json`;
       const response = await axios.get(API);
-      const weatherQuery = `http://localhost:3333/weather?searchQuery=${this.state.searchQuery}`;
+      const weatherQuery = `https://mc-city-explorer-api.herokuapp.com/weather?searchQuery=${this.state.searchQuery}`;
       const weatherResponse = await axios.get(weatherQuery);
 
       console.log('before');
-      const movieQuery = `http://localhost:3333/movies?searchQuery=${this.state.searchQuery}`;
+      const movieQuery = `https://mc-city-explorer-api.herokuapp.com/movies?searchQuery=${this.state.searchQuery}`;
       console.log('middle');
       const movieResponse = await axios.get(movieQuery);
       console.log('after');
