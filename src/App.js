@@ -75,17 +75,11 @@ class App extends React.Component {
     return (
       <>
         <Cityform submitLocation={this.submitLocation} updateCity={this.updateCity} />
-        {console.log(this.state.showMap)}
         <Location
           locationData={this.state.locationData}
           showMap={this.state.showMap}
           mapSrc={this.state.mapSrc}
         />
-        {/* <p>Location: {this.state.location.display_name}</p>
-        <p>Latitude: {this.state.location.lat}</p>
-        <p>Longitude: {this.state.location.lon}</p>
-        {this.state.showMap && <img alt="map" src={this.state.mapSrc} />} */}
-
         <Weather forecastData={this.state.forecastData} />
         <Movies movieData={this.state.movieData} />
       </>
